@@ -1,2 +1,2 @@
 # EduStream
-## EduStream is a full-stack MERN Ed-Tech platform with features like secure JWT & Google OAuth login, role-based access, course creation & enrollment, progress tracking, and online payments. It includes a responsive UI with Tailwind CSS, admin dashboard, cloud media uploads, contact form, and Redux-based state management for seamless learning.
+### EduStream is a full-stack MERN Ed-Tech platform with features like secure JWT & Google OAuth login, role-based access, course creation & enrollment, progress tracking, and online payments. It includes a responsive UI with Tailwind CSS, admin dashboard, cloud media uploads, contact form, and Redux-based state management for seamless learning.
