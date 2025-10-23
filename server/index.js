@@ -54,5 +54,8 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`App is running at :- http://localhost:${PORT}`);
+  console.log(`Backend App is running at :- ${process.env.FRONTEND_URL}`);
+  console.log(
+    `Frontend App is running at :- ${process.env.REACT_APP_BASE_URL}`
+  );
 });
