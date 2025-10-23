@@ -60,14 +60,13 @@ function Template({
                   </p>
                   <div className="w-full h-[1px] bg-richblack-700"></div>
                 </div>
-                <div className="w-full mx-auto transition-all duration-200 hover:scale-95">
+                <div className="w-full mx-auto flex items-center justify-center">
                   <GoogleLogin
                     onSuccess={handleGoogleSuccess}
                     onError={handleGoogleError}
                     shape="pill"
-                    theme="outline"
+                    theme="filled_blue"
                     size="large"
-                    width="100%"
                   />
                 </div>
               </>
