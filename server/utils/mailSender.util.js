@@ -1,18 +1,29 @@
-const { Resend } = require("resend");
-const resend = new Resend(process.env.RESEND_API_KEY);
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const mailSender = async (email, title, body) => {
   try {
-    const info = await resend.emails.send({
-      from: "EduStream <onboarding@resend.dev>",
-      to: email,
-      subject: title,
-      html: body,
+    const transporter = nodemailer.createTransport({
+      host: process.env.MAIL_HOST,
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
+      },
     });
-    console.log("✅ Email sent:", info);
+
+    const mailOptions = {
+      from: `EduStream - by Parth Katariya`,
+      to: `${email}`,
+      subject: `${title}`,
+      html: `${body}`,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Email sent:", info.response);
     return info;
   } catch (error) {
     console.error("❌ Mail sending failed:", error.message);
+    return;
   }
 };
 
