@@ -5,9 +5,6 @@ const mailSender = async (email, title, body) => {
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      host: process.env.MAIL_HOST,
-      port: 587,
-      secure: false,
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
@@ -28,7 +25,7 @@ const mailSender = async (email, title, body) => {
     console.log("✅ Email sent:", info.response);
     return info;
   } catch (error) {
-    console.error("❌ Mail sending failed:", error.message);
+    console.error("❌ Mail sending failed:", error);
     return;
   }
 };
