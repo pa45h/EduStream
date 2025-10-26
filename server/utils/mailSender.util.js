@@ -4,9 +4,10 @@ require("dotenv").config();
 const mailSender = async (email, title, body) => {
   try {
     const transporter = nodemailer.createTransport({
+      service: "gmail",
       host: process.env.MAIL_HOST,
-      port: 465,
-      secure: true,
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,
@@ -14,7 +15,10 @@ const mailSender = async (email, title, body) => {
     });
 
     const mailOptions = {
-      from: `EduStream - by Parth Katariya`,
+      from: {
+        name: "EduStream - Parth Katariya",
+        address: process.env.MAIL_USER,
+      },
       to: `${email}`,
       subject: `${title}`,
       html: `${body}`,
