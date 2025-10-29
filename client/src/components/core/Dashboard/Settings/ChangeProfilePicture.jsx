@@ -38,7 +38,6 @@ const ChangeProfilePicture = () => {
 
   const handleFileUpload = () => {
     try {
-      console.log("Uploading...");
       setLoading(true);
       const formData = new FormData();
 

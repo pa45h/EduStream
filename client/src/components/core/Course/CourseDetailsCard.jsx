@@ -59,8 +59,6 @@ function CourseDetailsCard({
     });
   };
 
-  // console.log("Student already enrolled ", course?.studentEnrolled, user?._id)
-
   return (
     <>
       <div

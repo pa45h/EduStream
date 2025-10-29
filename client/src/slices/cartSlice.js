@@ -27,8 +27,6 @@ const cartSlice = createSlice({
         return;
       }
 
-      console.log("course---", course);
-
       state.cart.push(course);
       state.totalItems++;
       state.total += course?.price;

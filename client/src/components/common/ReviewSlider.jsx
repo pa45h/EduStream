@@ -17,8 +17,6 @@ const ReviewSlider = () => {
         "GET",
         ratingsEndpoints.REVIEWES_DETIALS_API
       );
-      console.log("res fetchAllReviews---", res);
-
       if (res?.data?.success) {
         setReviews(res?.data?.data);
       }

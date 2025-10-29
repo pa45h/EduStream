@@ -42,7 +42,6 @@ export default function CourseInformationForm() {
       setLoading(false);
     };
     if (editCourse) {
-      // console.log("data populated", editCourse)
       setValue("courseTitle", course.courseName);
       setValue("courseShortDesc", course.courseDescription);
       setValue("coursePrice", course.price);

@@ -29,10 +29,6 @@ function CourseDetails() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { courseId } = useParams();
-  // console.log(`course id: ${courseId}`)
-  // console.log(`user: ${user._id}`)
-
-  // Declear a state to save the course details
   const [course, setCourse] = useState(null);
   const [confirmationModal, setConfirmationModal] = useState(null);
   const [addedToCart, setAddedToCart] = useState(
@@ -40,7 +36,6 @@ function CourseDetails() {
   );
 
   useEffect(() => {
-    // Calling fetchCourseDetails fucntion to fetch the details
     (async () => {
       try {
         const res = await fetchCourseDetails(courseId);
@@ -51,21 +46,15 @@ function CourseDetails() {
     })();
   }, [courseId]);
 
-  // console.log("course: ", course)
-
-  // Calculating Avg Review count
   const [avgReviewCount, setAvgReviewCount] = useState(0);
   useEffect(() => {
     const count = GetAvgRating(course?.courseDetails.ratingAndReviews);
     setAvgReviewCount(count);
   }, [course]);
-  // console.log("avgReviewCount: ", avgReviewCount)
-
-  // // Collapse all
-  // const [collapse, setCollapse] = useState("")
+  
   const [isActive, setIsActive] = useState(Array(0));
   const handleActive = (id) => {
-    // console.log("called", id)
+    
     setIsActive(
       !isActive.includes(id)
         ? isActive.concat([id])
@@ -73,7 +62,6 @@ function CourseDetails() {
     );
   };
 
-  // Total number of lectures
   const [totalNoOfLectures, setTotalNoOfLectures] = useState(0);
   useEffect(() => {
     let lectures = 0;
@@ -149,7 +137,6 @@ function CourseDetails() {
   };
 
   if (paymentLoading) {
-    // console.log("payment loading")
     return (
       <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
         <div className="spinner"></div>

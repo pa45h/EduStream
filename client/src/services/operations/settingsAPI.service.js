@@ -25,10 +25,6 @@ export function updateDisplayPicture(token, formData) {
           Authorization: `Bearer ${token}`,
         }
       );
-      console.log(
-        "UPDATE_DISPLAY_PICTURE_API API RESPONSE................",
-        response
-      );
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -37,7 +33,6 @@ export function updateDisplayPicture(token, formData) {
       dispatch(setUser(response.data.user));
       localStorage.setItem("user", JSON.stringify(response.data.user));
     } catch (error) {
-      console.log("UPDATE_DISPLAY_PICTURE_API API ERROR.............", error);
       toast.error("Could Not Update Display Picture");
     } finally {
       toast.dismiss(toastId);
@@ -52,20 +47,17 @@ export function updateProfile(token, formData) {
       const response = await apiConnector("PUT", UPDATE_PROFILE_API, formData, {
         Authorization: `Bearer ${token}`,
       });
-      console.log("UPDATE_PROFILE_API API RESPONSE.............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
       toast.success("Profile Updated Successfully");
-      console.log(response.data.updatedProfileDetails);
       dispatch(setUser(response.data.updatedProfileDetails));
       localStorage.setItem(
         "user",
         JSON.stringify(response.data.updatedProfileDetails)
       );
     } catch (error) {
-      console.log("UPDATE_PROFILE_API API ERROR..............", error);
       toast.error("Could Not Update Profile");
     } finally {
       toast.dismiss(toastId);
@@ -87,14 +79,11 @@ export function changePassword(token, formData) {
         }
       );
 
-      console.log("CHANGE_PASSWORD_API API RESPONSE................", response);
-
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
       toast.success("Password Changed Successfully");
     } catch (error) {
-      console.log("CHANGE_PASSWORD_API API ERROR.................", error);
       toast.error(error.response.data.message);
     } finally {
       toast.dismiss(toastId);
@@ -110,15 +99,12 @@ export function deleteProfile(token, navigate) {
         Authorization: `Bearer ${token}`,
       });
 
-      console.log("DELETE_PROFILE_API API RESPONSE................", response);
-
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
       toast.success("Profile Deleted Successfully");
       dispatch(logout(navigate));
     } catch (error) {
-      console.log("DELETE_PROFILE_API API ERROR....................", error);
       toast.error("Could Not Delete Profile");
     } finally {
       toast.dismiss(toastId);

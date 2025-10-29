@@ -35,7 +35,6 @@ export default function SubSectionModal({
 
   useEffect(() => {
     if (view || edit) {
-      console.log("modalData", modalData)
       setValue("lectureTitle", modalData.title);
       setValue("lectureDesc", modalData.description);
     }
@@ -43,7 +42,6 @@ export default function SubSectionModal({
 
   const isFormUpdated = () => {
     const currentValues = getValues();
-    console.log("changes after editing form values: ", currentValues);
 
     if (
       currentValues.lectureTitle !== modalData.title ||
@@ -82,7 +80,6 @@ export default function SubSectionModal({
   };
 
   const onSubmit = async (data) => {
-    // console.log(data)
     if (view) return;
 
     if (edit) {
