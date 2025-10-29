@@ -67,7 +67,7 @@ exports.resetPasswordMail = (name, url) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">🔑 Password Reset Request</div>
@@ -78,7 +78,7 @@ exports.resetPasswordMail = (name, url) => {
               <p>If you did not request this, please ignore this email. This link will expire in <strong>15 minutes</strong> for security reasons.</p>
           </div>
           <div class="support">
-              Need help? Email us at <a href="mailto:pa45h.katariya@gmail.com">pa45h.katariya@gmail.com</a>.
+              Need help? Email us at <a href="mailto:pa45h.katariya@gmail.com">CLICK</a>.
           </div>
       </div>
   </body>
@@ -143,7 +143,7 @@ exports.passwordUpdated = (email, name) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">🔒 Password Update Confirmation</div>
@@ -153,7 +153,7 @@ exports.passwordUpdated = (email, name) => {
               <p>If you did not request this change, please contact us immediately to secure your account.</p>
           </div>
           <div class="support">
-              Need help? Email us at <a href="mailto:pa45h.katariya@gmail.com">pa45h.katariya@gmail.com</a>.
+              Need help? Email us at <a href="mailto:pa45h.katariya@gmail.com">CLICK</a>.
           </div>
       </div>
   </body>

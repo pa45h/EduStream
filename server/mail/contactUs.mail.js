@@ -55,7 +55,7 @@ exports.contactUsEmail = (firstname, lastname, email, message, phoneNo) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">📩 New Contact Form Submission</div>
@@ -69,7 +69,7 @@ exports.contactUsEmail = (firstname, lastname, email, message, phoneNo) => {
           <div class="support">
               This message was sent from your website contact form.<br/>
               Please respond directly to the user’s email: 
-              <a href="mailto:${email}">${email}</a>
+              <a href="mailto:${email}">CLICK</a>
           </div>
       </div>
   </body>
@@ -146,7 +146,7 @@ exports.contactThankYou = (name) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">✨ Thank You for Contacting Us</div>
@@ -154,11 +154,11 @@ exports.contactThankYou = (name) => {
               <p>Dear ${name},</p>
               <p>Thank you for reaching out to us! We have received your message and our team will get back to you as soon as possible.</p>
               <p>In the meantime, feel free to explore more on our website.</p>
-              <a class="cta" href="">Visit Website</a>
+              <a class="cta" href="https://edustream-pa45h.vercel.app">Visit Website</a>
           </div>
           <div class="support">
               If you need immediate assistance, you can email us directly at 
-              <a href="mailto:pa45h.katariya@gmail.com">pa45h.katariya@gmail.com</a>.
+              <a href="mailto:pa45h.katariya@gmail.com">CLICK</a>.
           </div>
       </div>
   </body>

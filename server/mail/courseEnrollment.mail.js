@@ -71,7 +71,7 @@ exports.courseEnrollment = (courseName, name) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">🎉 Course Registration Confirmation</div>
@@ -79,11 +79,11 @@ exports.courseEnrollment = (courseName, name) => {
               <p>Dear ${name},</p>
               <p>You have successfully registered for the course <span class="highlight">"${courseName}"</span>.  
               We are excited to have you as a participant!</p>
-              <a class="cta" href="">Go to Dashboard</a>
+              <a class="cta" href="https://edustream-pa45h.vercel.app/dashboard/enrolled-courses">See Your Courses</a>
           </div>
           <div class="support">
               If you have any questions, please email us at 
-              <a href="mailto:pa45h.katariya@gmail.com">pa45h.katariya@gmail.com</a>.
+              <a href="mailto:pa45h.katariya@gmail.com">CLICK</a>.
           </div>
       </div>
   </body>

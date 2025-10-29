@@ -57,7 +57,7 @@ exports.emailVerification = (otp) => {
   </head>
   <body>
       <div class="container">
-          <a href="">
+          <a href="https://edustream-pa45h.vercel.app">
               <img class="logo" src="https://res.cloudinary.com/djf4s41kd/image/upload/v1758962539/Logo-Full-Light_yynpmn.png" alt="Logo">
           </a>
           <div class="message">🔑 OTP Verification</div>
@@ -68,7 +68,7 @@ exports.emailVerification = (otp) => {
               <p>This OTP is valid for 5 minutes. If you did not request this, please ignore this email.</p>
           </div>
           <div class="support">
-              For help, reach out to <a href="mailto:pa45h.katariya@gmail.com">pa45h.katariya@gmail.com</a>.
+              For help, reach out to <a href="mailto:pa45h.katariya@gmail.com">CLICK</a>.
           </div>
       </div>
   </body>
