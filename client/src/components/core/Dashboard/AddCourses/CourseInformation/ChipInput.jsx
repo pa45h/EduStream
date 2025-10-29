@@ -12,12 +12,12 @@ export default function ChipInput({
   getValues,
 }) {
   const { editCourse, course } = useSelector((state) => state.course);
-
   const [chips, setChips] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     if (editCourse) {
-      setChips(course?.tag);
+      setChips(course?.tag || []);
     }
     register(name, { required: true, validate: (value) => value.length > 0 });
   }, []);
@@ -26,6 +26,14 @@ export default function ChipInput({
     setValue(name, chips);
   }, [chips]);
 
+  const handleAddChip = () => {
+    const chipValue = inputValue.trim();
+    if (chipValue && !chips.includes(chipValue)) {
+      setChips([...chips, chipValue]);
+      setInputValue("");
+    }
+  };
+
   const handleKeyDown = (event) => {
     if (event.key === "Enter" || event.key === ",") {
       event.preventDefault();
@@ -33,26 +41,16 @@ export default function ChipInput({
     }
   };
 
-  const handleAddChip = (event) => {
-    event.preventDefault();
-    const chipValue = event.target.value.trim();
-    if (chipValue && !chips.includes(chipValue)) {
-      const newChips = [...chips, chipValue];
-      setChips(newChips);
-      event.target.value = "";
-    }
-  };
-
   const handleDeleteChip = (chipIndex) => {
-    const newChips = chips.filter((_, index) => index !== chipIndex);
-    setChips(newChips);
+    setChips(chips.filter((_, index) => index !== chipIndex));
   };
 
   return (
     <div className="flex flex-col space-y-2">
       <label className="text-sm text-richblack-5" htmlFor={name}>
-        {label} <sup className="text-pink-200"> * </sup>
+        {label} <sup className="text-pink-200">*</sup>
       </label>
+
       <div className="flex w-full flex-wrap gap-y-2">
         {chips.map((chip, index) => (
           <div
@@ -76,8 +74,10 @@ export default function ChipInput({
             name={name}
             type="text"
             placeholder={placeholder}
-            onKeyDown={handleKeyDown}
             className="form-style w-full"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <button
             type="button"
@@ -88,9 +88,10 @@ export default function ChipInput({
           </button>
         </div>
       </div>
+
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-200">
-          {label} Is Required
+          {label} is required
         </span>
       )}
     </div>
