@@ -12,12 +12,12 @@ export default function ChipInput({
   getValues,
 }) {
   const { editCourse, course } = useSelector((state) => state.course);
+
   const [chips, setChips] = useState([]);
-  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     if (editCourse) {
-      setChips(course?.tag || []);
+      setChips(course?.tag);
     }
     register(name, { required: true, validate: (value) => value.length > 0 });
   }, []);
@@ -33,11 +33,12 @@ export default function ChipInput({
     }
   };
 
-  const handleAddChip = () => {
-    const chipValue = inputValue.trim();
+  const handleAddChip = (event) => {
+    const chipValue = event.target.value.trim();
     if (chipValue && !chips.includes(chipValue)) {
-      setChips((prev) => [...prev, chipValue]);
-      setInputValue("");
+      const newChips = [...chips, chipValue];
+      setChips(newChips);
+      event.target.value = "";
     }
   };
 
@@ -49,9 +50,8 @@ export default function ChipInput({
   return (
     <div className="flex flex-col space-y-2">
       <label className="text-sm text-richblack-5" htmlFor={name}>
-        {label} <sup className="text-pink-200">*</sup>
+        {label} <sup className="text-pink-200"> * </sup>
       </label>
-
       <div className="flex w-full flex-wrap gap-y-2">
         {chips.map((chip, index) => (
           <div
@@ -75,10 +75,8 @@ export default function ChipInput({
             name={name}
             type="text"
             placeholder={placeholder}
-            className="form-style w-full"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
+            className="form-style w-full"
           />
           <button
             type="button"
@@ -89,10 +87,9 @@ export default function ChipInput({
           </button>
         </div>
       </div>
-
       {errors[name] && (
         <span className="ml-2 text-xs tracking-wide text-pink-200">
-          {label} is required
+          {label} Is Required
         </span>
       )}
     </div>
