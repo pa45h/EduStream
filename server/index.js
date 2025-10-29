@@ -18,17 +18,18 @@ const fileUpload = require("express-fileupload");
 
 const helmet = require("helmet");
 const morgan = require("morgan");
-app.use(helmet());
-app.use(morgan("dev"));
 
-app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
+app.use(helmet());
+app.use(morgan("dev"));
+
+app.use(express.json());
+app.use(cookieParser());
 app.use(
   fileUpload({
     useTempFiles: true,
