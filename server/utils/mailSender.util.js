@@ -1,30 +1,28 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-const { Resend } = require("resend");
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const mailSender = async (email, title, body) => {
   try {
-    // const transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: process.env.MAIL_USER,
-    //     pass: process.env.MAIL_PASS,
-    //   },
-    // });
+    const transporter = nodemailer.createTransport({
+      host: "smtp-relay.brevo.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.BREVO_SMTP_LOGIN,
+        pass: process.env.BREVO_SMTP_PASSWORD,
+      },
+    });
 
     const mailOptions = {
-      from: `EduStream - Parth Katariya <onboarding@resend.dev>`,
+      from: `EduStream - Parth Katariya <pa45h.katariya@gmail.com>`,
       to: `${email}`,
       subject: `${title}`,
       html: `${body}`,
     };
 
-    // const info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
 
-    const info = await resend.emails.send(mailOptions);
-
-    console.log("✅ Email sent:", info);
+    console.log("✅ Email sent:", info.messageId);
     return info;
   } catch (error) {
     console.error("❌ Mail sending failed:", error);
