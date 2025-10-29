@@ -34,6 +34,7 @@ export default function ChipInput({
   };
 
   const handleAddChip = (event) => {
+    event.preventDefault();
     const chipValue = event.target.value.trim();
     if (chipValue && !chips.includes(chipValue)) {
       const newChips = [...chips, chipValue];
