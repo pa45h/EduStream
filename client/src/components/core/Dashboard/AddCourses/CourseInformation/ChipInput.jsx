@@ -70,7 +70,7 @@ export default function ChipInput({
           </div>
         ))}
 
-        <div className="flex flex-col items-start space-y-2">
+        <div className="w-full flex flex-col items-start space-y-2">
           <input
             id={name}
             name={name}
