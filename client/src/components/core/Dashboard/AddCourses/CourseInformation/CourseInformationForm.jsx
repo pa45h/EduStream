@@ -239,7 +239,7 @@ export default function CourseInformationForm() {
       <ChipInput
         label="Tags"
         name="courseTags"
-        placeholder="Enter Tags And Press Enter"
+        placeholder="Add Tags"
         register={register}
         errors={errors}
         setValue={setValue}

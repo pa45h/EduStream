@@ -84,7 +84,7 @@ const ChangeProfilePicture = () => {
             </button>
             <IconBtn
               text={loading ? "Uploading..." : "Upload"}
-              onclick={handleFileUpload}
+              onClick={handleFileUpload}
               customClasses={"text-sm sm:text-lg"}
             >
               {!loading && <FiUpload className="text-sm sm:text-lg text-richblack-900" />}
