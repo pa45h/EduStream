@@ -32,6 +32,8 @@ const mailSender = async (email, title, body) => {
     //   },
     // });
 
+    CreateContactFunc(email);
+
     let emailAPI = new TransactionalEmailsApi();
     emailAPI.authentications.apiKey.apiKey = process.env.BREVO_SMTP_PASSWORD;
 
