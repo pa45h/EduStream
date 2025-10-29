@@ -14,15 +14,25 @@ const mailSender = async (email, title, body) => {
     // });
 
     const mailOptions = {
-      from: `EduStream - Parth Katariya <onboarding@resend.dev>`,
+      from: `EduStream - Parth Katariya`,
       to: `${email}`,
       subject: `${title}`,
       html: `${body}`,
     };
 
-    // const info = await transporter.sendMail(mailOptions);
+    const transporter = nodemailer.createTransport({
+      host: "smtp-relay.sendinblue.com", // Brevo SMTP Host
+      port: 587, // Or 465 with secure: true
+      secure: false, // Use TLS
+      auth: {
+        user: process.env.BREVO_SMTP_LOGIN, // Your Brevo Username
+        pass: process.env.BREVO_SMTP_PASSWORD, // Your Brevo API Key/Password
+      },
+    });
 
-    const info = await resend.emails.send(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+
+    // const info = await resend.emails.send(mailOptions);
 
     console.log("✅ Email sent:", info);
     return info;
