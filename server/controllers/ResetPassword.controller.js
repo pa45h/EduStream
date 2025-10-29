@@ -23,7 +23,7 @@ exports.resetPasswordToken = async (req, res) => {
       { token: token, resetPasswordExpires: Date.now() + 5 * 60 * 1000 }
     );
 
-    const url = `http://localhost:3000/update-password/${token}`;
+    const url = `${process.env.FRONTEND_URL}/update-password/${token}`;
 
     await mailSender(
       email,
