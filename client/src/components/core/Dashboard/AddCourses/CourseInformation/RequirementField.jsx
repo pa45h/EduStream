@@ -7,6 +7,7 @@ export default function RequirementsField({
   register,
   setValue,
   errors,
+  placeholder,
   getvalues,
 }) {
   const { editCourse, course } = useSelector((state) => state.course);
@@ -23,6 +24,13 @@ export default function RequirementsField({
   useEffect(() => {
     setValue(name, requirementsList);
   }, [requirementsList]);
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === ",") {
+      event.preventDefault();
+      handleAddRequirement();
+    }
+  };
 
   const handleAddRequirement = () => {
     if (requirement) {
@@ -47,7 +55,9 @@ export default function RequirementsField({
           type="text"
           id={name}
           value={requirement}
+          placeholder={placeholder}
           onChange={(e) => setRequirement(e.target.value)}
+          onKeyDown={handleKeyDown}
           className="form-style w-full"
         />
         <button

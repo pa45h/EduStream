@@ -275,6 +275,7 @@ export default function CourseInformationForm() {
       <RequirementsField
         name="courseRequirements"
         label="Requirements/Instructions"
+        placeholder="Add Requirements or Instructions"
         register={register}
         setValue={setValue}
         errors={errors}
