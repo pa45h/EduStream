@@ -6,6 +6,7 @@ It features **OTP & Google authentication**, **Razorpay payment gateway**, **Clo
 ---
 
 ## 🎥 Demo Preview
+### Click Image to See The Demo Video
 
 [![Watch Demo](https://res.cloudinary.com/djf4s41kd/image/upload/v1761923988/EduStream/op7whdzgixkacjxe3vos.png)](https://res.cloudinary.com/djf4s41kd/video/upload/v1761926332/EduStream_-_Small_hlc5gv.mp4)
 
