@@ -7,9 +7,7 @@ It features **OTP & Google authentication**, **Razorpay payment gateway**, **Clo
 
 ## 🎥 Demo Preview
 
-<video src="https://res.cloudinary.com/djf4s41kd/video/upload/v1761926332/EduStream_-_Small_hlc5gv.mp4" controls width="700">
-  Your browser does not support the video tag.
-</video>
+[![Watch Demo](https://res.cloudinary.com/djf4s41kd/image/upload/v1761923988/EduStream/op7whdzgixkacjxe3vos.png)](https://res.cloudinary.com/djf4s41kd/video/upload/v1761926332/EduStream_-_Small_hlc5gv.mp4)
 
 ---
 
@@ -103,7 +101,4 @@ It features **OTP & Google authentication**, **Razorpay payment gateway**, **Clo
 
 ## 📧 Contact
 
-Developed by [Parth Katariya](https://www.linkedin.com/in/parthkatariya)  
-🔗 [GitHub](https://github.com/pa45h)
-📩 [email](mailto:parthkatariya87@gmail.com)
-
+Developed by [Parth Katariya](https://www.linkedin.com/in/parthkatariya) | 🔗 [GitHub](https://github.com/pa45h) | 📩 [email](mailto:parthkatariya87@gmail.com)
