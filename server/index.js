@@ -54,6 +54,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 app.listen(PORT, () => {
   console.log(`Backend App is running at :- ${process.env.FRONTEND_URL}`);
   console.log(
